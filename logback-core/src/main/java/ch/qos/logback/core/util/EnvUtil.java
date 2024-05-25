@@ -33,9 +33,10 @@ public class EnvUtil {
      * @return current version or null if missing version data
      */
     static public String logbackVersion() {
-        String moduleVersion = logbackVersionByModule();
-        if(moduleVersion != null)
-            return moduleVersion;
+        // AndroidIDE Changed: Class.getModule() is not available on Android
+//        String moduleVersion = logbackVersionByModule();
+//        if(moduleVersion != null)
+//            return moduleVersion;
 
         Package pkg = EnvUtil.class.getPackage();
         if (pkg == null) {
